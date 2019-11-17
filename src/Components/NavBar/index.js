@@ -6,8 +6,8 @@ const NavBar = () => {
      <div>
         <nav className="navbar navbar-light bg-light">
         <i className="fas fa-book-open fa-2x"></i>
-            <a className="nav-link" >Search </a>
-            <a className="nav-link" >Saved</a>
+            <a className="nav-link" >Search new books </a>
+            <a className="nav-link" >Your saved books</a>
         </nav>
      </div>    
     )

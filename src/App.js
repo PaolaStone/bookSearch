@@ -3,6 +3,7 @@ import NavBar from './Components/NavBar/index.js';
 import Header from './Components/Header/index.js';
 import Search from './Components/Search/index.js';
 import Results from './Components/Results/index.js';
+import request from 'superagent';
 import './App.css';
 
 class App extends Component {
@@ -14,7 +15,18 @@ class App extends Component {
     }
   }
 
+  searchBook = (e) => {
+    e.preventDefault();
+    request
+      .get("https://www.googleapis.com/books/v1/volumes?")
+      .query({ q: this.state.searchField})
+      .then((data) => {
+        console.log(data)
+      })
+  }
+
   handleSearch = (e) => {
+    
     console.log(e.target.value)
     this.setState({ searchField: e.target.value})
   }
@@ -24,7 +36,7 @@ class App extends Component {
       <div className="App">
         <NavBar/>
         <Header/>
-        <Search handleSearch={this.handleSearch}/>
+        <Search searchBook={this.searchBook} handleSearch={this.handleSearch}/>
         <br/>
         <Results/>
       </div>
