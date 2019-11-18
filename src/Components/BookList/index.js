@@ -8,8 +8,8 @@ const BookList = (props) => {
                 props.books.map((book,i) => {
                     return<BookCard
                             key={i}        
-                            image={book.volumeInfo.imageLinks.thumbnail}
                             title={book.volumeInfo.title}
+                            image={book.volumeInfo.imageLinks.thumbnail}
                             author={book.volumeInfo.authors}
                             description={book.volumeInfo.description}
                             link={book.volumeInfo.infoLink}
@@ -26,38 +26,32 @@ const BookCard = (props) => {
             <div className="card">
                 <div className="card-header">
                     <div className="row">
-                    <div className="col col-md-7">
-                        <h3>{props.title}</h3>
-                        <h5>{props.author}</h5>
-                    </div>
-                   <div className="col col-md-5 text-right">
-                        <a href={props.link} class="btn btn-warning">View</a>
-                        <a href="#" class="btn btn-warning">Save</a>
-                    </div>
+                        <div className="col col-md-7">
+                            <h3>{props.title}</h3>
+                            <h5>{props.author}</h5>
+                        </div>
+                        <div className="col col-md-5 text-right">
+                            <a href={props.link} className="btn btn-warning">View</a>
+                            <a href="#" className="btn btn-warning">Save</a>
+                        </div>
                     </div>
 
                     
                 </div> 
-                <div class="card-body">
+                <div className="card-body">
                     <div className="row">
                     <div className="col col-md-3">
                             <img className="img-fluid w-100" src={props.image} alt=""/>
                             
                         </div>
                         <div className="col col-md-9">
-                            <p class="card-text">{props.description}</p>
-                            {/* <p>{props.link}</p> */}
-                            
+                            <p className="card-text">{props.description}</p>
                         </div>
                     </div>
-                        
-                    
-                    
                 </div>
                 <br></br>
             </div>
-          
-        </div>
+       </div>
     )
 }
 

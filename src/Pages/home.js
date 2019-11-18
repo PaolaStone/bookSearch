@@ -4,6 +4,7 @@ import NavBar from '../Components/NavBar';
 import Header from '../Components/Header';
 import Search from '../Components/Search';
 import request from 'superagent';
+
 // import './App.css';
 
 class Home extends Component {
@@ -32,6 +33,7 @@ class Home extends Component {
         this.setState({ searchField: e.target.value})
     }
 
+    
     render() {
         return (
         <div className="App">
