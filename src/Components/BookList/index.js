@@ -1,5 +1,5 @@
 import React from 'react';
-// import BookCard from './Components/BookCard'
+import './index.css';
 
 const BookList = (props) => {
     return(
@@ -9,10 +9,10 @@ const BookList = (props) => {
                     return<BookCard
                             key={i}        
                             image={book.volumeInfo.imageLinks.thumbnail}
-                            tittle={book.volumeInfo.title}
+                            title={book.volumeInfo.title}
                             author={book.volumeInfo.authors}
                             description={book.volumeInfo.description}
-                            link={book.volumeInfo.selfLink}
+                            link={book.volumeInfo.infoLink}
                             />
                 })
             }
@@ -22,15 +22,31 @@ const BookList = (props) => {
 }
 const BookCard = (props) => {
     return(
-        <div className="card-container">
-            <img src={props.image} alt=""/>
-            <div className="desc">
-                <h2>{props.title}</h2>
-                <h3>{props.author}</h3>
-                <p>{props.description}</p>
-                <p>{props.link}</p>
+        <div className="container">
+            <div className="card">
+                <div className="card-header">
+                    <h2>{props.title}</h2>
+                    <h5>{props.author}</h5>
+                </div> 
+                <div class="card-body">
+                    <div className="row">
+                    <div className="col col-md-3">
+                            <img src={props.image} alt=""/>
+                        </div>
+                        <div className="col col-md-9">
+                            <p class="card-text">{props.description}</p>
+                            {/* <p>{props.link}</p> */}
+                            <a href={props.link} class="btn btn-warning">View</a>
+                            <a href="#" class="btn btn-warning">Save</a>
+                        </div>
+                    </div>
+                        
+                    
+                    
+                </div>
+                <br></br>
             </div>
-
+          
         </div>
     )
 }

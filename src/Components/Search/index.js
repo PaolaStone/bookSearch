@@ -3,7 +3,7 @@ import './index.css';
 
 const Search = (props) => {
     return(
-         <div className="search-area">
+         <div className="container search-area">
           
             <form onSubmit={props.searchBook} className="form">
                 <input onChange={props.handleSearch}className="form-control mr-sm-2" type="search" placeholder="Book Name" aria-label="Search"/>
