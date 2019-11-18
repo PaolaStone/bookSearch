@@ -25,19 +25,29 @@ const BookCard = (props) => {
         <div className="container">
             <div className="card">
                 <div className="card-header">
-                    <h2>{props.title}</h2>
-                    <h5>{props.author}</h5>
+                    <div className="row">
+                    <div className="col col-md-7">
+                        <h3>{props.title}</h3>
+                        <h5>{props.author}</h5>
+                    </div>
+                   <div className="col col-md-5 text-right">
+                        <a href={props.link} class="btn btn-warning">View</a>
+                        <a href="#" class="btn btn-warning">Save</a>
+                    </div>
+                    </div>
+
+                    
                 </div> 
                 <div class="card-body">
                     <div className="row">
                     <div className="col col-md-3">
-                            <img src={props.image} alt=""/>
+                            <img className="img-fluid w-100" src={props.image} alt=""/>
+                            
                         </div>
                         <div className="col col-md-9">
                             <p class="card-text">{props.description}</p>
                             {/* <p>{props.link}</p> */}
-                            <a href={props.link} class="btn btn-warning">View</a>
-                            <a href="#" class="btn btn-warning">Save</a>
+                            
                         </div>
                     </div>
                         
