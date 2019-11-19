@@ -5,6 +5,7 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -23,7 +24,7 @@ mongoose.connect(
   {
     useCreateIndex: true,
     useNewUrlParser: true
-  }
+  },
 );
 
 // Define any API routes before this runs

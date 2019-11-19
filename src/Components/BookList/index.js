@@ -7,12 +7,13 @@ const BookList = (props) => {
             {
                 props.books.map((book,i) => {
                     return<BookCard
-                            key={i}        
+                            bookID={book.id}
                             title={book.volumeInfo.title}
                             image={book.volumeInfo.imageLinks.thumbnail}
                             author={book.volumeInfo.authors}
                             description={book.volumeInfo.description}
                             link={book.volumeInfo.infoLink}
+                            key={book.id}
                             />
                 })
             }
@@ -20,6 +21,7 @@ const BookList = (props) => {
         </div>
     )
 }
+
 const BookCard = (props) => {
     return(
         <div className="container">
@@ -32,7 +34,7 @@ const BookCard = (props) => {
                         </div>
                         <div className="col col-md-5 text-right">
                             <a href={props.link} className="btn btn-warning">View</a>
-                            <a href="#" className="btn btn-warning">Save</a>
+                            <a onClick={() => console.log("clicked " + props.title + " " + props.author)} href="#" className="btn btn-warning">Save</a>
                         </div>
                     </div>
 
